@@ -20,6 +20,7 @@ svg {
 
 path:hover {
   fill: rgb(127, 197, 127);
+  cursor: pointer;
 }
 
 .title-years {
@@ -34,10 +35,12 @@ path:hover {
   /* position: relative; */
 }
 .title {
-  font-size: 50px;
+  font-size: 24px;
   font-weight: bolder;
   margin-bottom: 20px;
   color: white;
+  width: 100%;
+  display: flex;
 }
 .years {
   font-size: 40px;
@@ -52,3 +55,22 @@ body {
   align-items: center;
   position: relative; */
 }
+.title-new {
+  width: 33%;
+  
+    text-align: center;
+    margin: 0
+}
+.links {
+  width: 33%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+.holder {
+  width: 33%;
+}
+.links a {
+  color: white;
+}
+

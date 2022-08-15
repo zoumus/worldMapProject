@@ -11097,7 +11097,7 @@
 		"2020": 249511333647.502,
 		"2021": 284087563695.798
 	},{
-		"Country Name": "Russian Federation",
+		"Country Name": "Russia",
 		"Country Code": "RUS",
 		"Indicator Name": "GDP (current US$)",
 		"Indicator Code": "NY.GDP.MKTP.CD",
@@ -12119,7 +12119,7 @@
 		"2020": 2884248048.49068,
 		"2021": 2862131979.69543
 	},{
-		"Country Name": "Slovak Republic",
+		"Country Name": "Slovakia",
 		"Country Code": "SVK",
 		"Indicator Name": "GDP (current US$)",
 		"Indicator Code": "NY.GDP.MKTP.CD",
@@ -13728,7 +13728,7 @@
 		"2020": 53560755046.5726,
 		"2021": 59319547636.0876
 	},{
-		"Country Name": "United States",
+		"Country Name": "United States of America",
 		"Country Code": "USA",
 		"Indicator Name": "GDP (current US$)",
 		"Indicator Code": "NY.GDP.MKTP.CD",
@@ -13899,7 +13899,7 @@
 		"2020": 872134546.803407,
 		"2021": 889775243.378352
 	},{
-		"Country Name": "Venezuela, RB",
+		"Country Name": "Venezuela",
 		"Country Code": "VEN",
 		"Indicator Name": "GDP (current US$)",
 		"Indicator Code": "NY.GDP.MKTP.CD",
