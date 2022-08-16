@@ -1,11 +1,6 @@
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
-
-#nav-bar {
-    right: 20px;
-    font-size: 30px;
-}
 svg {
   position: absolute;
   left: 50%;
@@ -14,12 +9,12 @@ svg {
 }
 
 .country {
-  fill: lightgreen;
+  fill: lightblue;
   stroke: #999;
 }
 
 path:hover {
-  fill: rgb(127, 197, 127);
+  fill: rgb(212, 212, 152);
   cursor: pointer;
 }
 
@@ -28,49 +23,118 @@ path:hover {
   justify-content: center;
   flex-direction: column;
   align-items: center; */
-  font-family: 'Volkhov', serif;
+  font-family: "Volkhov", serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   /* position: relative; */
 }
+
 .title {
   font-size: 24px;
   font-weight: bolder;
   margin-bottom: 20px;
-  color: white;
+  color: black;
   width: 100%;
   display: flex;
 }
+
 .years {
   font-size: 40px;
   margin-bottom: 30px;
-  color: white;
+  color: black;
 }
+
 body {
-  background-color: darkblue;
+  background-color: rgb(0, 204, 255);
   /* font-family: 'Volkhov', serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative; */
 }
+
 .title-new {
   width: 33%;
-  
-    text-align: center;
-    margin: 0
+  text-align: center;
+  margin: 0;
 }
+
 .links {
+  color: black;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
   width: 33%;
   display: flex;
   justify-content: space-evenly;
-  padding: 10px;
 }
+
 .holder {
   width: 33%;
 }
+
 .links a {
-  color: white;
+  color: black;
 }
 
+.fab:hover {
+  box-shadow: 0 0 10px rgba(163, 21, 21, 0.8);
+}
+
+#slider-container {
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-25%);
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#year-slider {
+  width: 100%;
+}
+
+#year-slider {
+  -webkit-appearance: none;
+  background: transparent;
+  width: 100%;
+}
+
+#year-slider:focus {
+  outline: none;
+}
+
+#year-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #555;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: #555;
+  box-shadow: 0 0 0px #000000;
+  margin-top: -8.5px;
+}
+
+#year-slider::-webkit-slider-runnable-track {
+  height: 8px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(210, 210, 210);
+  border-radius: 5px;
+}
+
+#year-slider:active::-webkit-slider-runnable-track {
+  background-color: rgb(190, 190, 190);
+}
+
+#slider-current-year {
+  position: absolute;
+  top: 20px;
+  font-size: 20px;
+  font-weight: 400;
+}
