@@ -13,7 +13,7 @@ svg {
 }
 
 path:hover {
-  fill: rgb(212, 212, 152);
+  fill: #7dd87d;
   cursor: pointer;
 }
 
@@ -45,7 +45,7 @@ path:hover {
 }
 
 body {
-  background-color: rgb(0, 204, 255);
+  background-color: white;
   /* font-family: 'Volkhov', serif;
   display: flex;
   flex-direction: column;
@@ -136,4 +136,13 @@ body {
   top: 20px;
   font-size: 20px;
   font-weight: 400;
+}
+
+#tooltip {
+  padding: 4px 10px;
+  border-radius: 5px;
+}
+
+#NaN {
+  opacity: 0;
 }

@@ -1885,7 +1885,7 @@
 		"2020": 14930072799.0084,
 		"2021": 17613846472.9916
 	},{
-		"Country Name": "Central African Republic",
+		"Country Name": "Central African Rep.",
 		"Country Code": "CAF",
 		"Indicator Name": "GDP (current US$)",
 		"Indicator Code": "NY.GDP.MKTP.CD",
@@ -2262,7 +2262,7 @@
 		"2020": 14687673892882,
 		"2021": 17734062645371.4
 	},{
-		"Country Name": "Cote d'Ivoire",
+		"Country Name": "Côte d'Ivoire",
 		"Country Code": "CIV",
 		"Indicator Name": "GDP (current US$)",
 		"Indicator Code": "NY.GDP.MKTP.CD",
@@ -3103,7 +3103,7 @@
 		"2020": 3181071153.6622,
 		"2021": 3371102123.51343
 	},{
-		"Country Name": "Dominica",
+		"Country Name": "Dominican Rep.",
 		"Country Code": "DMA",
 		"Indicator Name": "GDP (current US$)",
 		"Indicator Code": "NY.GDP.MKTP.CD",
@@ -11889,7 +11889,7 @@
 		"2020": 1704891034067.33,
 		"2021": 1916583951084.67
 	},{
-		"Country Name": "South Sudan",
+		"Country Name": "Sudan",
 		"Country Code": "SSD",
 		"Indicator Name": "GDP (current US$)",
 		"Indicator Code": "NY.GDP.MKTP.CD",

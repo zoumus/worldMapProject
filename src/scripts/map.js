@@ -1,5 +1,6 @@
 import * as d3 from "d3";
 import * as topojson from "topojson";
+import { yearlyBarChart } from "./yearlyChart";
 
 export const createMap = function (dataObject,dataArray, year=2005) {
   const width = 900;
@@ -17,10 +18,6 @@ export const createMap = function (dataObject,dataArray, year=2005) {
     .scale(120)
     .translate([width / 2, height / 1.4]);
   const path = d3.geoPath(projection);
-
-  // const g = svg.append('g');
-//   console.log(svg);
-//   console.log(dataArray,"DATA")
 
   d3.json(
     "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json"
@@ -41,78 +38,83 @@ export const createMap = function (dataObject,dataArray, year=2005) {
            let gdpLevel = countryObj[yr]
            let gdp = gdpLevel/1000000000
 
-            if(!gdp) return '#black'
-            
-            if (gdp > 4000){
-                return "pink"
-            }
+            if(!gdp) return 'white'
 
-            if(gdp >= 0 &&  gdp < 100) {
-               return 'brown'
-            } else if(gdp >= 100 && gdp < 200) {
-               return 'yellow'
-            } else if(gdp >= 200 && gdp < 300) {
-               return 'red'
-            } else if (gdp >= 300) {
-               return "blue"
-            }else {
-                
+            if (gdp >= 0 &&  gdp < 500) {
+               return '#f5ebeb'
+            } else if(gdp >= 500 && gdp < 1000) {
+               return '#3ab1c8'
+            } else if(gdp >= 1000 && gdp < 1500) {
+               return '#2772db'
+            } else {
+               return "#070f4e"
             }
 
       });
+      
   });
+
     let tooltip;
-
-  d3.select(".map")
+    d3.select(".map")
   
-    .on("mouseover", function (e) {
-    
-      if (e.target.nodeName === "path") {
-    
-        let countryName = e.target.dataset.name;
-        let modal = document.getElementById("modal");
-        let countryNameHolder = document.getElementById("country-name");
-        let countryCodeHolder = document.getElementById("country-code");
-        let countryYearHolder = document.getElementById("country-year");
+        .on("mouseover", function (e) {
+        
+        if (e.target.nodeName === "path") {
 
-        let yr = document.getElementById("year-slider").value;
 
-        countryYearHolder.innerHTML = dataObject[countryName][year];
-         tooltip = d3
-            .select("#tooltip")
-            .append("div")
-            .style("position", "absolute")
-            .style("visibility", "hidden")
-            .style("top", "300px")
-            .style("width", "300px")
-            .style("z-index", 99)
-            .style("background-color", "white")
-            .style("border", "solid")
-            .style("border-width", "1px")
-            .style("border-radius", "5px")
-            .style("padding", "10px")
-            .html(`<ul><li>${dataObject[countryName]["Country Name"]} (${dataObject[countryName]["Country Code"]}]</li><li>${dataObject[countryName][yr]}</li></ul>`);
+            
+            let countryName = e.target.dataset.name;
+            let modal = document.getElementById("modal");
+            let countryNameHolder = document.getElementById("country-name");
+            let countryCodeHolder = document.getElementById("country-code");
+            let countryYearHolder = document.getElementById("country-year");
+            // let canvas = document.getElementById("canvas");
+            // canvas.remove()
+            yearlyBarChart(dataObject[countryName],0)
+            
+            let yr = document.getElementById("year-slider").value;
 
-        modal.style.color = "transparent";
+            countryYearHolder.innerHTML = dataObject[countryName][year];
+            tooltip = d3
+                .select("#tooltip")
+                .append("div")
+                .style("position", "absolute")
+                .style("visibility", "hidden")
+                .style("top", "300px")
+                .style("width", "300px")
+                .style("z-index", 2)
+                .style("background-color", "white")
+                .style("border", "solid")
+                .style("border-width", "1px")
+                .style("border-radius", "5px")
+                .style("padding", "10px")
+                .html(`<ul><li>${dataObject[countryName]["Country Name"]} (${dataObject[countryName]["Country Code"]}]</li><li>${dataObject[countryName][yr]}</li></ul>`);
 
-        countryNameHolder.innerHTML =
-          dataObject[countryName]["Country Name"];
-        countryCodeHolder.innerHTML =
-          dataObject[countryName]["Country Code"];
-        // countryCodeHolder.innerHTML = dataObject[countryName]['Country year']
-        return tooltip.style("visibility", "visible");
-      } else {
-        return null;
-      }
-    })
-    .on("mousemove", function () {
-      return tooltip
-        .style("top", event.pageY - 100 + "px")
-        .style("left", event.pageX - 30 + "px");
-    })
-    .on("mouseout", function () {
-      return tooltip.style("visibility", "hidden");
-    });
+            modal.style.color = "transparent";
+
+            countryNameHolder.innerHTML =
+            dataObject[countryName]["Country Name"];
+            countryCodeHolder.innerHTML =
+            dataObject[countryName]["Country Code"];
+            // countryCodeHolder.innerHTML = dataObject[countryName]['Country year']
+            return tooltip.style("visibility", "visible");
+        } else {
+            return null;
+        }
+        })
+
+        .on("mousemove", function () {
+        return tooltip
+            .style("top", event.pageY - 100 + "px")
+            .style("left", event.pageX - 30 + "px");
+        })
+        // .on("click", function(e) {
+
+        // })
+        
+        .on("mouseout", function () {
+        return tooltip.style("visibility", "hidden");
+        });
     
  
 };

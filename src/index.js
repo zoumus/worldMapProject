@@ -4,6 +4,10 @@ import * as topojson from "topojson";
 import createMap from "./scripts/map";
 import {fetchData} from "./scripts/util/apiUtil";
 import {renderSlider} from "./scripts/map"
+import {yearlyBarChart} from "./scripts/yearlyChart"
+import {legend} from "./scripts/legend"
+
+
 
 
 document.addEventListener("DOMContentLoaded", async function(){
@@ -33,14 +37,26 @@ document.addEventListener("DOMContentLoaded", async function(){
     //   console.log(dataObject)
 
 
-    const show  =[];
+    // const show  =[];
     createMap(dataObject,data);
+
     let sliderInput = document.getElementById("year-slider")
     sliderInput.addEventListener("change", (e) => {
         document.querySelector('svg').remove();
         // sliderLabel.innerHTML = e.target.value;
         createMap(dataObject, data,e.target.value)
       });
+
+
+    yearlyBarChart(data);
+    legend();
+    // let barChart = document.getElementsByClassName('rectangle')
+    // barChart.addEventListner('click', (e) => {
+    //     e.target.value;
+    // })
+
+
+    
 
     // let map = document.querySelector('.map').addEventListener('mouseover', e => {
     //     console.log(e.target.dataset.name);
@@ -70,5 +86,6 @@ document.addEventListener("DOMContentLoaded", async function(){
         // body.appendChild(modal)
     // })
     // console.log(map);
+
     
 })
