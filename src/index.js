@@ -9,7 +9,7 @@ import {renderSlider} from "./scripts/map"
 document.addEventListener("DOMContentLoaded", async function(){
     let data = await fetchData("../src/scripts/data.json");
     data = data
-    console.log(data)
+    // console.log(data[0]["Country Name"])
     renderSlider()
     // .map(object => {
     //     let countryName = object["Country Name"];
@@ -34,7 +34,14 @@ document.addEventListener("DOMContentLoaded", async function(){
 
 
     const show  =[];
-    createMap(dataObject);
+    createMap(dataObject,data);
+    let sliderInput = document.getElementById("year-slider")
+    sliderInput.addEventListener("change", (e) => {
+        document.querySelector('svg').remove();
+        // sliderLabel.innerHTML = e.target.value;
+        createMap(dataObject, data,e.target.value)
+      });
+
     // let map = document.querySelector('.map').addEventListener('mouseover', e => {
     //     console.log(e.target.dataset.name);
     //     console.log(e.target.dataset, "data when clicked")

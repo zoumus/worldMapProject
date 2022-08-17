@@ -2396,7 +2396,7 @@
 		"2020": 40804449726.0184,
 		"2021": 45238613479.8308
 	},{
-		"Country Name": "Congo, Dem. Rep.",
+		"Country Name": "Dem. Rep. Congo",
 		"Country Code": "COD",
 		"Indicator Name": "GDP (current US$)",
 		"Indicator Code": "NY.GDP.MKTP.CD",
@@ -6165,7 +6165,7 @@
 		"2020": 425888950992.003,
 		"2021": 498559576714.721
 	},{
-		"Country Name": "Iran, Islamic Rep.",
+		"Country Name": "Iran",
 		"Country Code": "IRN",
 		"Indicator Name": "GDP (current US$)",
 		"Indicator Code": "NY.GDP.MKTP.CD",
@@ -6769,7 +6769,7 @@
 		"2020": 100666542665.72,
 		"2021": 110347079517.356
 	},{
-		"Country Name": "Kyrgyz Republic",
+		"Country Name": "Kyrgyzstan",
 		"Country Code": "KGZ",
 		"Indicator Name": "GDP (current US$)",
 		"Indicator Code": "NY.GDP.MKTP.CD",
@@ -12402,7 +12402,7 @@
 		"2020": 1200634489.34841,
 		"2021": 1320053793.03903
 	},{
-		"Country Name": "Syrian Arab Republic",
+		"Country Name": "Syria",
 		"Country Code": "SYR",
 		"Indicator Name": "GDP (current US$)",
 		"Indicator Code": "NY.GDP.MKTP.CD",
@@ -12466,7 +12466,7 @@
 		"2017": 16340665431.5167,
 		"2018": 21445775363.8597
 	},{
-		"Country Name": "Turks and Caicos Islands",
+		"Country Name": "Turkey",
 		"Country Code": "TCA",
 		"Indicator Name": "GDP (current US$)",
 		"Indicator Code": "NY.GDP.MKTP.CD",
@@ -14209,7 +14209,7 @@
 		"2020": 7716925356.12536,
 		"2021": 9007159195.74216
 	},{
-		"Country Name": "Yemen, Rep.",
+		"Country Name": "Yemen",
 		"Country Code": "YEM",
 		"Indicator Name": "GDP (current US$)",
 		"Indicator Code": "NY.GDP.MKTP.CD",
