@@ -36,30 +36,22 @@ export const createMap = function (dataObject,dataArray, year=2005) {
       .attr("data-id", el => el.id)
       .attr("data-name", (ele) => ele.properties.name)
       .attr("fill", (obj) => {
-        //   return "#ffc0cb"
-        //   console.log(obj,"obj")
-
-
            const countryObj = dataArray.find(fn => obj["properties"]["name"] === fn["Country Name"]) || {}
-            
-            let yr = document.getElementById("year-slider").value;
-        
-            let gdpLevel = countryObj[yr]
-            // console.log(countryObj,"country objeect")
-            let gdp = gdpLevel/1000000000
+           let yr = document.getElementById("year-slider").value;
+           let gdpLevel = countryObj[yr]
+           let gdp = gdpLevel/1000000000
 
             if(!gdp) return '#black'
-            // console.log(gdp, "GDPPPPPPP")
+            
             if (gdp > 4000){
                 return "pink"
             }
 
-            if(gdp >= 0 ||  gdp < 100) {
-                // console.log("BROWN")
+            if(gdp >= 0 &&  gdp < 100) {
                return 'brown'
-            } else if(gdp >= 100 || gdp < 200) {
+            } else if(gdp >= 100 && gdp < 200) {
                return 'yellow'
-            } else if(gdp >= 200 || gdp < 300) {
+            } else if(gdp >= 200 && gdp < 300) {
                return 'red'
             } else if (gdp >= 300) {
                return "blue"
@@ -74,11 +66,9 @@ export const createMap = function (dataObject,dataArray, year=2005) {
   d3.select(".map")
   
     .on("mouseover", function (e) {
-    //   console.log(e.target.dataset.name);
-    //   console.log("am i here?")
+    
       if (e.target.nodeName === "path") {
-        // console.log(dataObject[e.target.dataset.name],"data set")
-        // return tooltip.style("visibility", "visible")
+    
         let countryName = e.target.dataset.name;
         let modal = document.getElementById("modal");
         let countryNameHolder = document.getElementById("country-name");
@@ -86,11 +76,8 @@ export const createMap = function (dataObject,dataArray, year=2005) {
         let countryYearHolder = document.getElementById("country-year");
 
         let yr = document.getElementById("year-slider").value;
-        // console.log(yr, "input");
-        // for (let i = 2005; i <= 2020; i++) {
-            // let year = `${i}`
+
         countryYearHolder.innerHTML = dataObject[countryName][year];
-        //   }
          tooltip = d3
             .select("#tooltip")
             .append("div")
@@ -108,17 +95,11 @@ export const createMap = function (dataObject,dataArray, year=2005) {
 
         modal.style.color = "transparent";
 
-        // const test = dataObject[countryName]["Country Name"]
-
         countryNameHolder.innerHTML =
           dataObject[countryName]["Country Name"];
         countryCodeHolder.innerHTML =
           dataObject[countryName]["Country Code"];
         // countryCodeHolder.innerHTML = dataObject[countryName]['Country year']
-
-        
-
-        
         return tooltip.style("visibility", "visible");
       } else {
         return null;
@@ -135,11 +116,6 @@ export const createMap = function (dataObject,dataArray, year=2005) {
     
  
 };
-
-// d3.select("#circleCustomTooltip")
-// .on("mouseover", function(){return tooltip.style("visibility", "visible");})
-// .on("mousemove", function(){return tooltip.style("top", (event.pageY-2390)+"px").style("left",(event.pageX-800)+"px");})
-// .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
 
 export function renderSlider() {
   const slider = document.createElement("div");
@@ -172,63 +148,4 @@ export function renderSlider() {
     document.getElementById("slider-current-year").offsetWidth / 2
   }px)`;
 }
-
-
-
-// function colorMap (year){
-    
-//     const width = 900;
-//   const height = 600;
-//     const svg = d3
-//     .select("body")
-//     .append("svg")
-//     .attr("width", width)
-//     .attr("height", height)
-//     .attr("class", "map");
-//     console.log(year,"year")
-//     svg
-//       .selectAll("path")
-//     //   .data(countries.features)
-//       .enter()
-//       .append("path")
-//       .attr("class", "country")
-//       .attr("d", path)
-//       .attr("data-id", el => el.id)
-//       .attr("data-name", (ele) => ele.properties.name)
-//       .attr("fill", (obj) => {
-//         //   return "#ffc0cb"
-//           console.log(obj,"obj")
-          
-
-//            const countryObj = dataArray.find(fn => obj["properties"]["name"] === fn["Country Name"]) || {}
-            
-//             let yr = document.getElementById("year-slider").value;
-        
-//             let gdpLevel = countryObj[yr]
-//             console.log(countryObj,"country objeect")
-//             let gdp = gdpLevel/1000000000
-
-//             if(!gdp) return '#black'
-//             console.log(gdp, "GDPPPPPPP")
-//             if (gdp > 4000){
-//                 return "pink"
-//             }
-
-//             if(gdp >= 0 ||  gdp < 100) {
-//                 console.log("BROWN")
-//                return 'brown'
-//             } else if(gdp >= 100 || gdp < 200) {
-//                return 'yellow'
-//             } else if(gdp >= 200 || gdp < 300) {
-//                return 'red'
-//             } else if (gdp >= 300) {
-//                return "blue"
-//             }else {
-                
-//             }
-
-//       });
-  
-// }
-
 export default createMap;
