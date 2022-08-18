@@ -3,7 +3,6 @@
   \*************************************************************************************************************************************/
 svg {
   margin-top: -50px;
-  margin-bottom: 50px;
   margin-left: -50px;
 }
 
@@ -12,20 +11,15 @@ svg {
 }
 
 path:hover {
-  fill: #7dd87d;
+  fill: rgb(224, 185, 111);
   cursor: pointer;
 }
 
 .title-years {
-  /* display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center; */
   font-family: "Volkhov", serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* position: relative; */
 }
 
 .title {
@@ -40,15 +34,6 @@ path:hover {
 .years {
   font-size: 40px;
   color: black;
-}
-
-body {
-  background-color: white;
-  /* font-family: 'Volkhov', serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative; */
 }
 
 .title-new {
@@ -75,10 +60,6 @@ body {
   color: black;
 }
 
-.fab:hover {
-  box-shadow: 0 0 10px rgba(163, 21, 21, 0.8);
-}
-
 #container-box {
   display: flex;
   flex-direction: row;
@@ -98,7 +79,7 @@ body {
 
 #slider-container {
   bottom: 35px;
-  width: 10vw;
+  width: 15vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -153,6 +134,7 @@ body {
 
 #NaN {
   opacity: 0;
+  display: none;
 }
 
 #char-holder {
@@ -160,6 +142,11 @@ body {
   flex-direction: column;
   align-items: center;
   margin-right: 15px;
+}
+
+.bottom-one {
+  display: flex;
+  justify-content: space-around;
 }
 
 .legend {
@@ -177,19 +164,19 @@ body {
 }
 
 #first {
-  background-color: #f5ebeb;
+  background-color: #fffa9d;
 }
 
 #second {
-  background-color: #3ab1c8;
+  background-color: #41c5d3;
 }
 
 #third {
-  background-color: #2772db;
+  background-color: #09a8fa;
 }
 
 #forth {
-  background-color: #070f4e;
+  background-color: #626eef;
 }
 
 .right-container {
@@ -197,4 +184,14 @@ body {
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
+}
+
+#paragraph {
+  border: blue 1px solid;
+  padding: 10px;
+  border-radius: 10px;
+  line-height: 30px;
+  font-weight: bold;
+  font-size: 20px;
+  top: 50%;
 }

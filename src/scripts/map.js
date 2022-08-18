@@ -1,8 +1,7 @@
 import * as d3 from "d3";
 import * as topojson from "topojson";
 import { yearlyBarChart } from "./yearlyChart";
-import {legend} from "../scripts/legend"
-
+// import {legend} from "../scripts/legend"
 
 export const createMap = function (dataObject,dataArray, year=2005) {
   const width = 900;
@@ -43,20 +42,17 @@ export const createMap = function (dataObject,dataArray, year=2005) {
             if(!gdp) return 'white'
 
             if (gdp >= 0 &&  gdp < 500) {
-               return '#f5ebeb'
+               return '#fffa9d'
             } else if(gdp >= 500 && gdp < 1000) {
-               return '#3ab1c8'
+               return '#41c5d3'
             } else if(gdp >= 1000 && gdp < 1500) {
-               return '#2772db'
+               return '#09a8fa'
             } else {
-               return "#070f4e"
+               return "#626eef"
             }
 
       });
-      // legend();
   });
-  
-
     let tooltip;
     d3.select(".map")
 
@@ -74,9 +70,6 @@ export const createMap = function (dataObject,dataArray, year=2005) {
             let countryNameHolder = document.getElementById("country-name");
             let countryCodeHolder = document.getElementById("country-code");
             let countryYearHolder = document.getElementById("country-year");
-            // let canvas = document.getElementById("canvas");
-            // canvas.remove()
-            // yearlyBarChart(dataObject[countryName],0)
             
             let yr = document.getElementById("year-slider").value;
 
@@ -89,7 +82,7 @@ export const createMap = function (dataObject,dataArray, year=2005) {
                 .style("top", "300px")
                 .style("width", "300px")
                 .style("z-index", 2)
-                .style("background-color", "white")
+                .style("background-color", "rgb(106, 226, 106)")
                 .style("border", "solid")
                 .style("border-width", "1px")
                 .style("border-radius", "5px")
@@ -102,7 +95,7 @@ export const createMap = function (dataObject,dataArray, year=2005) {
             dataObject[countryName]["Country Name"];
             countryCodeHolder.innerHTML =
             dataObject[countryName]["Country Code"];
-            // countryCodeHolder.innerHTML = dataObject[countryName]['Country year']
+          
             return tooltip.style("visibility", "visible");
         } else {
             return null;
@@ -114,9 +107,6 @@ export const createMap = function (dataObject,dataArray, year=2005) {
             .style("top", event.pageY - 100 + "px")
             .style("left", event.pageX - 30 + "px");
         })
-        // .on("click", function(e) {
-
-        // })
         
         .on("mouseout", function () {
         return tooltip.style("visibility", "hidden");
@@ -134,7 +124,6 @@ export function renderSlider() {
   sliderInput.setAttribute("type", "range");
   sliderInput.setAttribute("min", "2005");
   sliderInput.setAttribute("max", "2020");
-  // sliderInput.setAttribute("value", "2020");
 
   sliderInput.setAttribute("step", "1");
 
@@ -143,12 +132,10 @@ export function renderSlider() {
 
   sliderInput.addEventListener("change", (e) => {
     sliderLabel.innerHTML = e.target.value;
-    // createMap(dataObject, dataArray,e.target.value)
   });
 
   slider.appendChild(sliderInput);
   slider.appendChild(sliderLabel);
-  // document.getElementsByClassName("title-years")[0].appendChild(slider);
 
   document.getElementById(
     "slider-current-year"
@@ -159,9 +146,5 @@ export function renderSlider() {
     "slider-current-year"
   )
   .style.top = '775px'
-
-  // `calc( 100% - 12.5px - ${
-  //   document.getElementById("slider-current-year").offsetWidth / 2
-  // }px)`;
 }
 export default createMap;

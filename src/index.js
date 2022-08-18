@@ -5,7 +5,7 @@ import createMap from "./scripts/map";
 import {fetchData} from "./scripts/util/apiUtil";
 import {renderSlider} from "./scripts/map"
 import {yearlyBarChart} from "./scripts/yearlyChart"
-import {legend} from "./scripts/legend"
+// import {legend} from "./scripts/legend"
 
 
 

@@ -16,7 +16,7 @@ export const yearlyBarChart = (stateObj,counter) => {
         data: {
             labels: ['2005', '2008', '2011', '2015', '2018', '2020'],
             datasets: [{
-                label: 'gdp of each country',
+                label: 'Country GDP in billions by year',
                 data: [
                         stateObj["2005"]/1000000000,
                         stateObj["2008"]/1000000000,
@@ -26,14 +26,14 @@ export const yearlyBarChart = (stateObj,counter) => {
                         stateObj["2020"]/1000000000,
                         ],
 
-                backgroundColor: ['blue'],
-                borderColor: ['rgba(255, 99, 132, 1)'],
+                backgroundColor: ['#fffa9d', '#41c5d38', '#09a8fa', '#626eef'],
+                borderColor: ['blue'],
                 borderWidth: 1
             }]
         },
         options: {
             label: {
-                display: false
+                display: true
             }
         }
     });
