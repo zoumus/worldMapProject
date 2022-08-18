@@ -22,6 +22,12 @@ document.addEventListener("DOMContentLoaded", async function(){
                 return Object.assign(obj, { [name]: item })
                 
             }, {});
+
+        let instructions = document.getElementById('instruction-modal')
+        instructions.addEventListener('click', e => {
+            instructions.style.opacity = '0';
+            instructions.style.pointerEvents = 'none'
+        })
             
            
     createMap(dataObject,data);
@@ -31,9 +37,5 @@ document.addEventListener("DOMContentLoaded", async function(){
         document.querySelector('svg').remove();
         createMap(dataObject, data,e.target.value)
       });
-
-
-    yearlyBarChart(data);
-    
-    
+    // yearlyBarChart(data);
 })

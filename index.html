@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./reset.css" />
     <link rel="stylesheet" href="./dist/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Volkhov:400,700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js" type="text/javascript" defer></script>
@@ -22,12 +23,19 @@
     <div id="instruction-modal">
       <div class="instructions">
         <div>
-          <p>
-            zuzu's not smart at all
-          </p>
+          <p class="instruction-title">Instructions: </p>
+          <hr>
+          <ul>
+         <li> Mouse over countries to display their name and gdp. </li>
+         <li>Click on them to show a graph of their gdp by years. </li>
+         <li>Use the slider to change the year. </li>
+        </ul>
+            
         </div>
       </div>
     </div>
+    <div id="background"></div>
+
     <div class="title-years">
       <div class="title">
         <div class="holder"></div>
@@ -53,12 +61,12 @@
           <div class="left-one">
             <div id="legend-text">Legend</div>
             <div class="legend">
-              <p>0</p>
+              <p>0 </p>
               <div id='first'></div>
               <div id='second'></div>
               <div id='third'></div>
               <div id='fourth'></div>
-              <p>1500 bilions</p>
+              <p> 1500 bilions</p>
             </div>
           </div>
           <div class="right-one">
@@ -67,7 +75,7 @@
         </div>
       </div>
       <div class="right-container">
-        <div id="paragraph">GDP(Gross Domestic Product) is userd to estimate the size of the economy. It is calculated as the value of all goods and services produced, it measures the amount of value added in the production process.</div>
+        <div id="paragraph">GDP (Gross Domestic Product) is used to estimate the size of the economy. It is calculated as the value of all goods and services produced and it measures the amount of value added in the production process.</div>
         <div id="chart-holder" height='30vh' width='30vw'></div>
       </div>
     </div>

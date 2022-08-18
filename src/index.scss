@@ -36,7 +36,8 @@ path:hover {
 .title-new {
   width: 33%;
   text-align: center;
-  margin: 0;
+  font-size: xxx-large;
+  padding-top: 1rem;
 }
 
 .links {
@@ -47,6 +48,17 @@ path:hover {
     width: 33%;
     display: flex;
     justify-content: space-evenly;
+}
+.links a i{
+  font-size: 40px;
+  padding: 5px;
+
+}
+.links a i:hover {
+  // border: 1px solid rgb(95, 94, 94);
+  padding: 5px;
+  box-shadow: 2px 2px 10px 3px grey;
+  border-radius: 10px;
 }
 .holder {
   width: 33%;
@@ -140,6 +152,7 @@ path:hover {
 .bottom-one {
   display: flex;
   justify-content: space-around;
+  align-items: end;
 }
 
 .legend {
@@ -200,6 +213,7 @@ path:hover {
 }
 
 #paragraph {
+  margin-bottom: 90px;
   border: blue 1px solid;
   padding: 10px;
   border-radius: 10px;
@@ -207,10 +221,48 @@ path:hover {
   font-weight: bold;
   font-size: 20px;
   top: 50%
+
 }
-// #instructions-modal {
-//   transition: 500ms;
-// }
+#instruction-modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, .5);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.instuctions {
+  height: 100vh;
+  width: 50vw;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  top: 35vh;
+  left: 25vh;
+}
+
+.instructions div {
+  color: black;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  top: 35vh;
+  left: 25vh;
+  box-shadow: 2px 3px 10px 2px grey;
+  padding: 10px;
+  line-height: 30px;
+  transition: 1000ms;
+}
+
+.instruction-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
 
 
 

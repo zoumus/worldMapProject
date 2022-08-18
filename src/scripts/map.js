@@ -53,50 +53,46 @@ export const createMap = function (dataObject,dataArray, year=2005) {
 
       });
   });
-    let tooltip;
-    d3.select(".map")
+    let tooltip = d3
+      .select("#tooltip")
+      .append("div")
+      .style("position", "absolute")
+      .style("visibility", "hidden")
+      .style("top", "300px")
+      .style("width", "300px")
+      .style("z-index", 2)
+      .style("background-color", "rgb(106, 226, 106)")
+      .style("border", "solid")
+      .style("border-width", "1px")
+      .style("border-radius", "5px")
+      .style("padding", "10px");
 
+    d3.select(".map")
       .on('click', (e) => {
         let countryName = e.target.dataset.name;
         yearlyBarChart(dataObject[countryName],0)
       })
-  
-        .on("mouseover", function (e) {
-
-        
+      .on("mouseover", function (e) {
         if (e.target.nodeName === "path") {
-            let countryName = e.target.dataset.name;
-            let modal = document.getElementById("modal");
-            let countryNameHolder = document.getElementById("country-name");
-            let countryCodeHolder = document.getElementById("country-code");
-            let countryYearHolder = document.getElementById("country-year");
-            
-            let yr = document.getElementById("year-slider").value;
-
-            countryYearHolder.innerHTML = dataObject[countryName][year];
-            tooltip = d3
-                .select("#tooltip")
-                .append("div")
-                .style("position", "absolute")
-                .style("visibility", "hidden")
-                .style("top", "300px")
-                .style("width", "300px")
-                .style("z-index", 2)
-                .style("background-color", "rgb(106, 226, 106)")
-                .style("border", "solid")
-                .style("border-width", "1px")
-                .style("border-radius", "5px")
-                .style("padding", "10px")
-                .html(`<ul><li>${dataObject[countryName]["Country Name"]} (${dataObject[countryName]["Country Code"]}]</li><li>${dataObject[countryName][yr]}</li></ul>`);
-
-            modal.style.color = "transparent";
-
-            countryNameHolder.innerHTML =
-            dataObject[countryName]["Country Name"];
-            countryCodeHolder.innerHTML =
-            dataObject[countryName]["Country Code"];
+          let countryName = e.target.dataset.name;
+          let modal = document.getElementById("modal");
+          let countryNameHolder = document.getElementById("country-name");
+          let countryCodeHolder = document.getElementById("country-code");
+          let countryYearHolder = document.getElementById("country-year");
           
-            return tooltip.style("visibility", "visible");
+          let yr = document.getElementById("year-slider").value;
+
+          countryYearHolder.innerHTML = dataObject[countryName][year];
+          tooltip.html(`<ul><li>${dataObject[countryName]["Country Name"]} (${dataObject[countryName]["Country Code"]}]</li><li>${dataObject[countryName][yr]}</li></ul>`);
+
+          modal.style.color = "transparent";
+
+          countryNameHolder.innerHTML =
+          dataObject[countryName]["Country Name"];
+          countryCodeHolder.innerHTML =
+          dataObject[countryName]["Country Code"];
+        
+          return tooltip.style("visibility", "visible");
         } else {
             return null;
         }
