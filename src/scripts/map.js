@@ -124,7 +124,7 @@ export function renderSlider() {
   sliderInput.setAttribute("type", "range");
   sliderInput.setAttribute("min", "2005");
   sliderInput.setAttribute("max", "2020");
-
+  sliderInput.setAttribute("value", "2020");
   sliderInput.setAttribute("step", "1");
 
   const sliderLabel = document.createElement("span");
