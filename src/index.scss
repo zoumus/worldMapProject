@@ -155,6 +155,26 @@ path:hover {
   height: 100%;
   width: 25%;
 }
+#legend-text {
+  padding: 5px;
+  border-radius: 10px;
+  line-height: 30px;
+  font-size: 20px;
+  top: 50%
+}
+
+#first:hover {
+  background-color: rgb(224, 185, 111);
+}
+#second:hover {
+  background-color: rgb(224, 185, 111);
+}
+#third:hover {
+  background-color: rgb(224, 185, 111);
+}
+#fourth:hover {
+  background-color: rgb(224, 185, 111);
+}
 
 #first {
   background-color: #fffa9d;
@@ -168,7 +188,7 @@ path:hover {
   background-color: #09a8fa;
 }
 
-#forth{
+#fourth{
   background-color: #626eef;
 }
 
