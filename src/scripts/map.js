@@ -81,10 +81,10 @@ export const createMap = function (dataObject,dataArray, year=2005) {
           let countryYearHolder = document.getElementById("country-year");
           
           let yr = document.getElementById("year-slider").value;
-
           countryYearHolder.innerHTML = dataObject[countryName][year];
+          
           tooltip.html(`<ul><li>${dataObject[countryName]["Country Name"]} (${dataObject[countryName]["Country Code"]}]</li><li>${dataObject[countryName][yr]}</li></ul>`);
-
+          console.log(dataObject[countryName][year])
           modal.style.color = "transparent";
 
           countryNameHolder.innerHTML =
@@ -136,7 +136,7 @@ export function renderSlider() {
   document.getElementById(
     "slider-current-year"
   )
-  .style.left = '500px';
+  .style.left = '900px';
 
   document.getElementById(
     "slider-current-year"
