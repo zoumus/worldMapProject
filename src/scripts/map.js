@@ -1,13 +1,15 @@
 import * as d3 from "d3";
 import * as topojson from "topojson";
 import { yearlyBarChart } from "./yearlyChart";
+import {legend} from "../scripts/legend"
+
 
 export const createMap = function (dataObject,dataArray, year=2005) {
   const width = 900;
   const height = 600;
 
   const svg = d3
-    .select("body")
+    .select(".top-one")
     .append("svg")
     .attr("width", width)
     .attr("height", height)
@@ -51,18 +53,22 @@ export const createMap = function (dataObject,dataArray, year=2005) {
             }
 
       });
-      
+      // legend();
   });
+  
 
     let tooltip;
     d3.select(".map")
+
+      .on('click', (e) => {
+        let countryName = e.target.dataset.name;
+        yearlyBarChart(dataObject[countryName],0)
+      })
   
         .on("mouseover", function (e) {
+
         
         if (e.target.nodeName === "path") {
-
-
-            
             let countryName = e.target.dataset.name;
             let modal = document.getElementById("modal");
             let countryNameHolder = document.getElementById("country-name");
@@ -70,7 +76,7 @@ export const createMap = function (dataObject,dataArray, year=2005) {
             let countryYearHolder = document.getElementById("country-year");
             // let canvas = document.getElementById("canvas");
             // canvas.remove()
-            yearlyBarChart(dataObject[countryName],0)
+            // yearlyBarChart(dataObject[countryName],0)
             
             let yr = document.getElementById("year-slider").value;
 
@@ -120,7 +126,7 @@ export const createMap = function (dataObject,dataArray, year=2005) {
 };
 
 export function renderSlider() {
-  const slider = document.createElement("div");
+  const slider = document.querySelector("#sliderLabel");
   slider.setAttribute("id", "slider-container");
 
   const sliderInput = document.createElement("input");
@@ -142,12 +148,20 @@ export function renderSlider() {
 
   slider.appendChild(sliderInput);
   slider.appendChild(sliderLabel);
-  document.getElementsByClassName("title-years")[0].appendChild(slider);
+  // document.getElementsByClassName("title-years")[0].appendChild(slider);
 
   document.getElementById(
     "slider-current-year"
-  ).style.left = `calc( 100% - 12.5px - ${
-    document.getElementById("slider-current-year").offsetWidth / 2
-  }px)`;
+  )
+  .style.left = '500px';
+
+  document.getElementById(
+    "slider-current-year"
+  )
+  .style.top = '775px'
+
+  // `calc( 100% - 12.5px - ${
+  //   document.getElementById("slider-current-year").offsetWidth / 2
+  // }px)`;
 }
 export default createMap;

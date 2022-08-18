@@ -1,9 +1,12 @@
 
 svg {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  // position: absolute;
+  // left: 50%;
+  // top: 50%;
+  // transform: translate(-50%, -50%);
+  margin-top: -50px;
+  margin-bottom: 50px;
+  margin-left: -50px;
 }
 
 .country {
@@ -37,7 +40,7 @@ path:hover {
 }
 .years {
   font-size: 40px;
-  margin-bottom: 30px;
+  // margin-bottom: 30px;
   color: black;
 }
 body {
@@ -80,21 +83,37 @@ body {
 
 // slider css
 
+#container-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  max-width: 100%;
+}
+.left-container {
+  display: flex;
+  flex-direction: column;
+}
+.bottom-one {
+  display: flex;
+  flex-direction: row;
+}
+
 #slider-container {
-    position: absolute;
+    // position: absolute;
     bottom: 35px;
-    left: 50%;
-    right: 50%;
-    transform: translateX(-25%);
-    width: 20%;
+    // left: 50%;
+    // right: 50%;
+    // transform: translateX(-25%);
+    width: 10vw;
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 50;
 }
 
-#year-slider {
-    width: 100%;
-}
+// #year-slider {
+//     width: 100%;
+// }
 
 #year-slider {
   -webkit-appearance: none; 
@@ -148,4 +167,46 @@ body {
 #NaN {
   opacity: 0;
 }
+#char-holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 15px;
+}
+.bottom-one {
+
+}
+.legend {
+  height: 1rem;
+  width: 20rem;
+  background-color: transparent;
+  display: flex;
+
+}
+.legend div {
+  border: solid;
+  border-color: black;
+  height: 100%;
+  width: 25%;
+}
+#first {
+  background-color: #f5ebeb;
+}
+#second {
+  background-color: #3ab1c8;
+}
+#third {
+  background-color: #2772db;
+}
+#forth{
+  background-color: #070f4e;
+}
+
+.right-container {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
 
