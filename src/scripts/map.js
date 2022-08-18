@@ -145,6 +145,6 @@ export function renderSlider() {
   document.getElementById(
     "slider-current-year"
   )
-  .style.top = '775px'
+  .style.top = '700px'
 }
 export default createMap;
