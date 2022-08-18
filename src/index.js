@@ -11,7 +11,7 @@ import {yearlyBarChart} from "./scripts/yearlyChart"
 
 
 document.addEventListener("DOMContentLoaded", async function(){
-    let data = await fetchData("./data.json");
+    let data = await fetchData("../data.json");
     data = data
 
     renderSlider()
