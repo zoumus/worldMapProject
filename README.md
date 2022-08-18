@@ -1,8 +1,10 @@
 # worldMapProject
 
+Live Site: https://zoumus.github.io/worldMapProject/
+
 #Background: 
 
-Whole World GDP is a web application that displays a GDP by year for all countries.
+   Whole World GDP is a web application that displays a GDP by year for all countries.
 
 #Technologies:
 
@@ -20,11 +22,5 @@ Whole World GDP is a web application that displays a GDP by year for all countri
    - year slider animation
    - information pop up on click
    
-#Wireframe:
 
-https://wireframe.cc/nW1Lfh
-
-   - the top one will be the title.
-   - the center will be the clickable map where to shoe the education level and gdp of each country
-   - the bottom will be the year slider animation
    

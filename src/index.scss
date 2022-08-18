@@ -229,6 +229,7 @@ path:hover {
   justify-content: center;
   align-items: center;
   z-index: 1;
+  
 }
 
 .instuctions {
@@ -240,6 +241,7 @@ path:hover {
   justify-content: center;
   top: 35vh;
   left: 25vh;
+  transition: 1000ms;
 }
 
 .instructions div {
@@ -252,7 +254,7 @@ path:hover {
   box-shadow: 2px 3px 10px 2px grey;
   padding: 10px;
   line-height: 30px;
-  transition: 1000ms;
+  
 }
 
 .instruction-title {
