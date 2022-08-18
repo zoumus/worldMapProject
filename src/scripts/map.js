@@ -81,16 +81,25 @@ export const createMap = function (dataObject,dataArray, year=2005) {
           let countryYearHolder = document.getElementById("country-year");
           
           let yr = document.getElementById("year-slider").value;
-          countryYearHolder.innerHTML = dataObject[countryName][year];
+          if (dataObject[countryName]) {
+            countryYearHolder.innerHTML = dataObject[countryName][year];
+            tooltip.html(`<ul><li>${dataObject[countryName]["Country Name"]} (${dataObject[countryName]["Country Code"]}]</li><li>${dataObject[countryName][yr]}</li></ul>`);
+            countryNameHolder.innerHTML =
+              dataObject[countryName]["Country Name"];
+            countryCodeHolder.innerHTML =
+              dataObject[countryName]["Country Code"];
+          } else {
+            countryYearHolder.innerHTML = 'Not Available'
+            countryNameHolder.innerHTML = 'Not Available'
+            countryCodeHolder.innerHTML = 'Not Available'
+            tooltip.html('<p>Not Available</p>')
+          }
           
-          tooltip.html(`<ul><li>${dataObject[countryName]["Country Name"]} (${dataObject[countryName]["Country Code"]}]</li><li>${dataObject[countryName][yr]}</li></ul>`);
-          console.log(dataObject[countryName][year])
+          
+          
+          
           modal.style.color = "transparent";
 
-          countryNameHolder.innerHTML =
-          dataObject[countryName]["Country Name"];
-          countryCodeHolder.innerHTML =
-          dataObject[countryName]["Country Code"];
         
           return tooltip.style("visibility", "visible");
         } else {
@@ -125,6 +134,7 @@ export function renderSlider() {
 
   const sliderLabel = document.createElement("span");
   sliderLabel.setAttribute("id", "slider-current-year");
+  sliderLabel.innerHTML = 2020;
 
   sliderInput.addEventListener("change", (e) => {
     sliderLabel.innerHTML = e.target.value;
@@ -133,14 +143,16 @@ export function renderSlider() {
   slider.appendChild(sliderInput);
   slider.appendChild(sliderLabel);
 
-  document.getElementById(
-    "slider-current-year"
-  )
-  .style.left = '900px';
+  // document.getElementById(
+  //   "slider-current-year"
+  // )
+  // .style.left = '900px';
 
-  document.getElementById(
-    "slider-current-year"
-  )
-  .style.top = '700px'
+  // document.getElementById(
+  //   "slider-current-year"
+  // )
+  // .style.top = '700px'
+
+  document.getElementById("slider-current-year").style.left = `calc( 100% - 12.5px - ${document.getElementById("slider-current-year").offsetWidth / 2}px)`;
 }
 export default createMap;
