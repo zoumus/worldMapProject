@@ -137,11 +137,6 @@ path:hover {
   border-radius: 5px;
 }
 
-#NaN {
-  opacity: 0;
-  display: none;
-  
-}
 #char-holder {
   display: flex;
   flex-direction: column;
@@ -191,6 +186,7 @@ path:hover {
 
 #first {
   background-color: #fffa9d;
+  margin-left: 10px;
 }
 
 #second {
@@ -203,6 +199,7 @@ path:hover {
 
 #fourth{
   background-color: #626eef;
+  margin-right: 10px;
 }
 
 .right-container {

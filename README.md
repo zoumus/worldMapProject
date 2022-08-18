@@ -2,14 +2,20 @@
 
 #Background: 
 
-global human capital rducation and GDP Mapis a visualisation app that displays 2000-2021 international education and gdp dataset by countr. Users can hover over a country on the map to view the education and gdp of the country.
-  
-#Functionality & MVPs :
+Whole World GDP is a web application that displays a GDP by year for all countries.
 
-this project will be implemented with the following technologies:
+#Technologies:
 
+   - javascript
+   - D3.js
+   - Chart.js
+   - HTML5
+   - CSS
+   - Whole world geographic data obtained through https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json
+   - Whole world GDP data obtained throught https://www.worldbank.org/en/about/annual-report/world-bank-group-downloads
 
-   - zoom in and zoom out on the countries
+#Features:
+
    - data visualization to render an interactive map
    - year slider animation
    - information pop up on click
