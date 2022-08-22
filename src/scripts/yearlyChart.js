@@ -33,19 +33,5 @@ export const yearlyBarChart = (stateObj,counter) => {
                 borderWidth: 1
             }]
         },
-        // options: { 
-        //     plugins: {
-        //          legend: {
-        //              display: false,
-        //              position: 'chartArea',
-        //              align: 'start',
-        //              reverse: true
-        //             }
-        //     },
-        //     title: {
-        //         text: 'Country GDP in billions by year',
-        //         display: true
-        //     }    
-        // }
     });
 }
