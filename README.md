@@ -1,12 +1,12 @@
-# worldMapProject
+Whole World GDP
 
 Live Site: https://zoumus.github.io/worldMapProject/
 
-#Background: 
+Background: 
 
    Whole World GDP is a web application that displays a GDP by year for all countries.
 
-#Technologies:
+Technologies, Libraries, APIs:
 
    - javascript
    - D3.js
@@ -16,11 +16,23 @@ Live Site: https://zoumus.github.io/worldMapProject/
    - Whole world geographic data obtained through https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json
    - Whole world GDP data obtained throught https://www.worldbank.org/en/about/annual-report/world-bank-group-downloads
 
-#Features:
+Features:
 
-   - data visualization to render an interactive map
-   - year slider animation
+   - data visualization to render an interactive map by mouseover a country or a click
+   - Interact with graphs, charts with a variety of :hover and :active events.
+   - year slider animation where the user have access to switch the year
    - information pop up on click
+
+Project Interface:
+   
+   <img src="images/githubImag1.png" height="100" width="10">
+   <img src="images/githubImag2.png" height="100" width="10">
+   <img src="images/githubImag3.png" height="100" width="10">
+
+
+Future Features:
+   - add more data to show
+   - Allows data comparasion between different countries
    
 
    

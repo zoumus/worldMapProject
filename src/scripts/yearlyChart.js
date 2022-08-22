@@ -1,3 +1,5 @@
+import { stratify } from "d3";
+
 export const yearlyBarChart = (stateObj,counter) => {
     let canvasElement = document.createElement("canvas");
     
@@ -16,7 +18,7 @@ export const yearlyBarChart = (stateObj,counter) => {
         data: {
             labels: ['2005', '2008', '2011', '2015', '2018', '2020'],
             datasets: [{
-                label: 'Country GDP in billions by year',
+                label: 'country GDP per years',
                 data: [
                         stateObj["2005"]/1000000000,
                         stateObj["2008"]/1000000000,
@@ -26,15 +28,24 @@ export const yearlyBarChart = (stateObj,counter) => {
                         stateObj["2020"]/1000000000,
                         ],
 
-                backgroundColor: ['#fffa9d', '#41c5d38', '#09a8fa', '#626eef'],
+                backgroundColor: ['rgb(106, 226, 106)'],
                 borderColor: ['blue'],
                 borderWidth: 1
             }]
         },
-        options: {
-            label: {
-                display: true
-            }
-        }
+        // options: { 
+        //     plugins: {
+        //          legend: {
+        //              display: false,
+        //              position: 'chartArea',
+        //              align: 'start',
+        //              reverse: true
+        //             }
+        //     },
+        //     title: {
+        //         text: 'Country GDP in billions by year',
+        //         display: true
+        //     }    
+        // }
     });
 }

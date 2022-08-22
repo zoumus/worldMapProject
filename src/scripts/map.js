@@ -143,16 +143,6 @@ export function renderSlider() {
   slider.appendChild(sliderInput);
   slider.appendChild(sliderLabel);
 
-  // document.getElementById(
-  //   "slider-current-year"
-  // )
-  // .style.left = '900px';
-
-  // document.getElementById(
-  //   "slider-current-year"
-  // )
-  // .style.top = '700px'
-
   document.getElementById("slider-current-year").style.left = `calc( 100% - 12.5px - ${document.getElementById("slider-current-year").offsetWidth / 2}px)`;
 }
 export default createMap;

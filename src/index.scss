@@ -34,10 +34,12 @@ path:hover {
 }
 
 .title-new {
-  width: 33%;
+  display: flex;
+  justify-content: center;
   text-align: center;
-  font-size: xxx-large;
+  font-size: 40px;
   padding-top: 1rem;
+  margin-left: 70px;
 }
 
 .links {
@@ -45,24 +47,24 @@ path:hover {
     padding: 10px;
     margin: 5px;
     border-radius: 5px;
-    width: 33%;
     display: flex;
-    justify-content: space-evenly;
+    margin-left: 425px;
 }
 .links a i{
-  font-size: 40px;
+  font-size: 30px;
   padding: 5px;
-
 }
+
 .links a i:hover {
-  // border: 1px solid rgb(95, 94, 94);
   padding: 5px;
   box-shadow: 2px 2px 10px 3px grey;
   border-radius: 10px;
 }
+
 .holder {
   width: 33%;
 }
+
 .links a {
   color: black;
 }
@@ -77,28 +79,31 @@ path:hover {
   display: flex;
   flex-direction: column;
 }
+.left-one {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 35px;
+}
 .bottom-one {
   display: flex;
   flex-direction: row;
 }
 
 #slider-container {
-  bottom: 35px;
+  // bottom: 35px;
   width: 15vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 50;
+  margin-top: 35px;
 }
 
 #year-slider {
   -webkit-appearance: none; 
   background: transparent; 
   width: 100%;
-}
-
-#year-slider:focus {
-  outline: none;
 }
 
 #year-slider::-webkit-slider-thumb {
@@ -126,11 +131,11 @@ path:hover {
 }
 
 #slider-current-year {
-  // position: absolute;
   top: 200px;
   left: 1000px;
   font-size: 20px;
   font-weight: 400;
+  margin-top: 10px;
 }
 
 #tooltip {
@@ -169,7 +174,8 @@ path:hover {
   border-radius: 10px;
   line-height: 30px;
   font-size: 20px;
-  top: 50%
+  top: 50%;
+  margin-left: 15px;
 }
 
 #first:hover {
@@ -208,6 +214,7 @@ path:hover {
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
 #paragraph {
@@ -230,19 +237,7 @@ path:hover {
   justify-content: center;
   align-items: center;
   z-index: 1;
-  
-}
-
-.instuctions {
-  height: 100vh;
-  width: 50vw;
-  width: 100vw;
-  height: 10vh;
-  display: flex;
-  justify-content: center;
-  top: 35vh;
-  left: 25vh;
-  transition: 1000ms;
+  transition: 2000ms;
 }
 
 .instructions div {
@@ -254,15 +249,10 @@ path:hover {
   left: 25vh;
   box-shadow: 2px 3px 10px 2px grey;
   padding: 10px;
-  line-height: 30px;
-  
+  line-height: 35px;
 }
 
 .instruction-title {
   font-size: 20px;
   font-weight: bold;
 }
-
-
-
-
