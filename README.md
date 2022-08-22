@@ -1,6 +1,6 @@
 Whole World GDP
 
-Live Site: https://zoumus.github.io/worldMapProject/
+<a href="https://zoumus.github.io/worldMapProject/">Live Site</a>
 
 Background: 
 
