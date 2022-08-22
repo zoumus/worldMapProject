@@ -4,13 +4,13 @@
 
 ---
 
-# Background: 
+## Background: 
 
    Whole World GDP is a web application that displays a GDP by year for all countries.
 
 ---
 
-# Technologies, Libraries, APIs:
+## Technologies, Libraries, APIs:
 
    - javascript
    - D3.js
@@ -22,7 +22,7 @@
 
 ---
 
-# Features:
+## Features:
 
    - data visualization to render an interactive map by mouseover a country or a click
    - Interact with graphs, charts with a variety of :hover and :active events.
@@ -31,7 +31,7 @@
 
 ---
 
-# Project Interface:
+## Project Interface:
    
    <img src="images/githubImag1.png" height="500" width="1000">
    <img src="images/githubImag2.png" height="500" width="1000">
@@ -39,7 +39,7 @@
 
 ---
 
-# Future Features:
+## Future Features:
    - add more data to show
    - Allows data comparasion between different countries
    
