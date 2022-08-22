@@ -25,9 +25,9 @@ Features:
 
 Project Interface:
    
-   <img src="images/githubImag1.png" height="100" width="100">
-   <img src="images/githubImag2.png" height="100" width="100">
-   <img src="images/githubImag3.png" height="100" width="100">
+   <img src="images/githubImag1.png" height="1000" width="1000">
+   <img src="images/githubImag2.png" height="1000" width="1000">
+   <img src="images/githubImag3.png" height="1000" width="1000">
 
 
 Future Features:
