@@ -21,8 +21,6 @@
    - information pop up on click
 
 
-## Project Interface:
-
 
 ## Future Features:
    - add more data to show
