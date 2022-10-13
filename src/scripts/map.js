@@ -3,7 +3,7 @@ import * as topojson from "topojson";
 import { yearlyBarChart } from "./yearlyChart";
 // import {legend} from "../scripts/legend"
 
-export const createMap = function (dataObject,dataArray, year=2005) {
+export const createMap = function (dataObject,dataArray, year) {
   const width = 900;
   const height = 600;
 
@@ -12,7 +12,9 @@ export const createMap = function (dataObject,dataArray, year=2005) {
     .append("svg")
     .attr("width", width)
     .attr("height", height)
-    .attr("class", "map");
+    // .attr("class", "map");
+    .attr("class", "top-one");
+
 
   const projection = d3
     .geoMercator()
@@ -42,35 +44,40 @@ export const createMap = function (dataObject,dataArray, year=2005) {
             if(!gdp) return 'white'
 
             if (gdp >= 0 &&  gdp < 500) {
-               return '#fffa9d'
+               return 'rgb(243, 166, 22)'//orange
             } else if(gdp >= 500 && gdp < 1000) {
-               return '#41c5d3'
+               return 'rgb(131, 243, 131)'//green
             } else if(gdp >= 1000 && gdp < 1500) {
-               return '#09a8fa'
+               return 'rgb(235, 83, 83)'//red
             } else {
-               return "#626eef"
+               return "rgb(89, 89, 241)"//blue
             }
 
       });
   });
+
     let tooltip = d3
       .select("#tooltip")
       .append("div")
       .style("position", "absolute")
       .style("visibility", "hidden")
       .style("top", "300px")
-      .style("width", "300px")
+      .style("width", "200px")
       .style("z-index", 2)
-      .style("background-color", "rgb(106, 226, 106)")
+      .style("background-color", "#e8e6e9")
       .style("border", "solid")
       .style("border-width", "1px")
       .style("border-radius", "5px")
       .style("padding", "10px");
 
-    d3.select(".map")
+    d3.select(".top-one")
       .on('click', (e) => {
-        let countryName = e.target.dataset.name;
-        yearlyBarChart(dataObject[countryName],0)
+        if(e.target.nodeName === "path") {
+          let countryName = e.target.dataset.name;
+          yearlyBarChart(dataObject[countryName],0)
+        } else {
+           tooltip.html('<p>Not Available</p>')
+        }
       })
       .on("mouseover", function (e) {
         if (e.target.nodeName === "path") {
@@ -94,13 +101,7 @@ export const createMap = function (dataObject,dataArray, year=2005) {
             countryCodeHolder.innerHTML = 'Not Available'
             tooltip.html('<p>Not Available</p>')
           }
-          
-          
-          
-          
           modal.style.color = "transparent";
-
-        
           return tooltip.style("visibility", "visible");
         } else {
             return null;

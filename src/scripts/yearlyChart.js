@@ -1,6 +1,9 @@
 import { stratify } from "d3";
+// import Chart from 'chart.js/auto'
+import * as d3 from 'd3'
 
 export const yearlyBarChart = (stateObj,counter) => {
+
     let canvasElement = document.createElement("canvas");
     
     counter++
@@ -13,25 +16,116 @@ export const yearlyBarChart = (stateObj,counter) => {
     chartHolder.append(canvasElement)
     let ctx = canvasElement.getContext('2d');
 
-    let myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['2005', '2008', '2011', '2015', '2018', '2020'],
-            datasets: [{
-                label: 'country GDP per years',
-                data: [
-                        stateObj["2005"]/1000000000,
-                        stateObj["2008"]/1000000000,
-                        stateObj["2011"]/1000000000,
-                        stateObj["2015"]/1000000000,
-                        stateObj["2018"]/1000000000,
-                        stateObj["2020"]/1000000000,
-                        ],
+//     let myChart = new Chart(ctx, {
+//         type: 'line',
+//         data: {
+//             labels: ['2005', '2008', '2011', '2015', '2018', '2020'],
+//             datasets: [{
+//                 label: 'country GDP per years',
+//                 data: [
+//                         stateObj["2005"]/1000000000,
+//                         stateObj["2008"]/1000000000,
+//                         stateObj["2011"]/1000000000,
+//                         stateObj["2015"]/1000000000,
+//                         stateObj["2018"]/1000000000,
+//                         stateObj["2020"]/1000000000,
+//                         ],
+//                 fill: true,
+//                 backgroundColor: ['rgb(106, 226, 106)'],
+//                 borderColor: ['blue'],
+//                 borderWidth: 1,
+//                 tension: 0.1
+//             }]
+//         }
 
-                backgroundColor: ['rgb(106, 226, 106)'],
-                borderColor: ['blue'],
-                borderWidth: 1
-            }]
-        },
-    });
+        
+        
+//     })
+    let labels = ['2005', '2008', '2011', '2015', '2018', '2020'];
+    const data = {
+                labels: labels,
+                datasets: [{
+                    label: 'country GDP per years',
+                    data: [
+                            stateObj["2005"]/1000000000,
+                            stateObj["2008"]/1000000000,
+                            stateObj["2011"]/1000000000,
+                            stateObj["2015"]/1000000000,
+                            stateObj["2018"]/1000000000,
+                            stateObj["2020"]/1000000000,
+                            ],
+                    
+    
+                    fill: true,
+                    backgroundColor: ['#ffee6f'],//yellow
+                    borderColor: ['blue'],
+                    borderWidth: 1,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            }
+
+            const font = {
+                weight: 'bold',
+                size: 15
+              
+            }
+        
+            const scales = {
+                xAxis: {
+                    title: {
+                        text: 'YEAR',
+                        color: 'black',
+                        display: true,
+                        font: font
+                  },
+                    ticks: {
+                        // color: '#fff'
+                    }
+                },
+                yAxis: {
+                    title: {
+                        text: 'GDP (Billions)',
+                        display: true,
+                        color: 'black',
+                        font: font
+                    },
+                    ticks: {
+                        // color: '#fff'
+                    }
+                }
+              }
+            // const layout = {
+                // padding: {
+                //   bottom: 20,
+                //   left: 20,
+                //   right: 35,
+                //   top: 20
+                // }
+            //   }
+        
+            const plugins = {
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: true,
+                    text: `GDP of ${stateObj['Country Name']}`,
+                    color: 'black',
+                    font: font
+                }
+            }
+
+            let myChart = new Chart(ctx, {
+                type: 'line',
+                data: data,
+                options: {
+                    plugins: plugins,
+                    legend: {
+                      display: false,
+                    },
+                    scales: scales,
+                    // layout: layout
+                }
+            })
 }
