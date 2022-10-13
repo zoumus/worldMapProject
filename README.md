@@ -13,7 +13,7 @@
 
 
 ## Features:
-![]()
+![](https://github.com/zoumus/worldMapProject/blob/main/images/ezgif.com-gif-maker.gif)
 
    - data visualization to render an interactive map by mouseover a country or a click
    - Interact with graphs, charts with a variety of :hover and :active events.
@@ -22,10 +22,6 @@
 
 
 ## Project Interface:
-   
-   <img src="images/githubImag1.png" height="500" width="1000">
-   <img src="images/githubImag2.png" height="500" width="1000">
-   <img src="images/githubImag3.png" height="500" width="1000">
 
 
 ## Future Features:
