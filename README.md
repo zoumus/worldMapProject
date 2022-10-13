@@ -21,6 +21,9 @@
    - information pop up on click
 
 
+### Detail Information Tooltip
+The application includes a tooltip that follows the mouse pointer and will show detailed information when hovering over different countries. The code for the tooltip is as follows:
+
 
 ## Future Features:
    - add more data to show
