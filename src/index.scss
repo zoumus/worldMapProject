@@ -170,7 +170,7 @@ path:hover {
 
 #legend-text {
   line-height: 30px;
-  font-size: 18px;
+  font-size: 15px;
   margin-bottom: 3px;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -180,13 +180,14 @@ path:hover {
   display: flex;
   justify-content: space-between;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .legend-title {
   display: flex;
   justify-content: space-around;
   padding: 5px;
+  font-size: 15px;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -194,6 +195,7 @@ path:hover {
   display: flex;
   justify-content: space-around;
   padding: 5px;
+  font-size: 14px;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -203,6 +205,9 @@ path:hover {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+}
+.top-one {
+  background-size: 50% 50%;
 }
 
 #paragraph {
